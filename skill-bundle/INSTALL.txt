@@ -1,0 +1,13 @@
+vbaExcel Skill Bundle
+
+Install (PowerShell):
+  1) Run ..\install-skill.ps1 from the repo root
+  2) Restart VS Code
+
+Use:
+  python scripts\export_vba.py path\file.xlsm VBA_EXPORT
+  python scripts\import_vba.py path\file.xlsm VBA_EXPORT
+
+Notes:
+  - Close Excel before export/import
+  - Enable AccessVBOM if prompted by the installer

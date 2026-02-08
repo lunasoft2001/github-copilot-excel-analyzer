@@ -5,8 +5,6 @@
 import os
 import sys
 import subprocess
-import time
-from pathlib import Path
 
 try:
     import win32com.client  # pywin32

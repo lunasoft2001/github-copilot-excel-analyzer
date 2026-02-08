@@ -1,46 +1,33 @@
 # vbaExcel Skill
 
-A GitHub Copilot skill to export and reimport VBA code from Excel .xlsm files on Windows.
+GitHub Copilot skill to export and reimport VBA code from Excel .xlsm files on Windows.
 
-## What is included
+## Structure
 
-- `skills/vbaExcel/SKILL.md`
-- `skills/vbaExcel/scripts/export_vba.py`
-- `skills/vbaExcel/scripts/import_vba.py`
-- `skills/vbaExcel/scripts/enable_vba_access.reg`
+- `skill-bundle/` (clean install bundle)
+- `install-skill.ps1` (installer)
+
+## Install
+
+```powershell
+./install-skill.ps1
+```
+
+This copies `skill-bundle` to `%USERPROFILE%\.copilot\skills\vbaExcel`.
+
+## Use
+
+```powershell
+python skill-bundle/scripts/export_vba.py path\file.xlsm VBA_EXPORT
+python skill-bundle/scripts/import_vba.py path\file.xlsm VBA_EXPORT
+```
 
 ## Requirements
 
 - Windows
 - Excel installed
 - Python 3.10+
-- `pywin32` installed
-
-## Quick start
-
-1. Export VBA modules:
-
-```powershell
-python skills/vbaExcel/scripts/export_vba.py path\file.xlsm VBA_EXPORT
-```
-
-2. Refactor the `.bas` files in `VBA_EXPORT`.
-
-3. Import VBA modules:
-
-```powershell
-python skills/vbaExcel/scripts/import_vba.py path\file.xlsm VBA_EXPORT
-```
-
-## Notes
-
-- Close Excel before exporting or importing.
-- Create a backup of your XLSM before importing.
-- If access to VBProject is blocked, run:
-
-```powershell
-reg import skills\vbaExcel\scripts\enable_vba_access.reg
-```
+- pywin32
 
 ## Version
 
