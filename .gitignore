@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.vscode/
+VBA_EXPORT/
+VBA_SKILL_EXPORT/
